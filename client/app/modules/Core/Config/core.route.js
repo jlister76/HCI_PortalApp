@@ -1,0 +1,36 @@
+(function(){
+  'use strict';
+
+  angular
+    .module('com.module.core')
+    .config(function($stateProvider, $urlRouterProvider){
+      $stateProvider
+        .state('router', {
+          url: '/router',
+          template: '<div class="lockscreen" style="background-color:#000; height: 100%"></div>',
+          controller: 'RouteCtrl'
+        })
+        .state('error', {
+          url: '/error',
+          template: '<div class="text-center alert alert-danger" style="margin: 100px">An error occurred.</div>'
+        })
+        .state('login', {
+          url: '/login',
+          templateUrl: 'Modules/Core/Views/login.html',
+          controller: 'LogInCtrl'
+        })
+        .state('portal', {
+          abstract: true,
+          url: '/portal',
+          template: '<p>Portal</p><div ui-view></div>',
+          controller: 'HomeCtrl'
+        })
+        .state('portal.home', {
+          url: '',
+          templateUrl: 'modules/Core/Views/home.html',
+          controller: 'HomeCtrl'
+        });
+      $urlRouterProvider.otherwise('/router');
+
+    })
+})();
