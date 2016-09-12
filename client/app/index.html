@@ -8,7 +8,13 @@
 </head>
 <body>
 
-<main ui-view></main>
+  <md-toolbar layout style="background-color: rgba(0, 39, 78, 1);" class="md-padding">
+    <img src="img/HC_logo.png" alt="logo" width="105px" height="43px">
+  </md-toolbar>
+  <div id="wrapper" style="padding: 0px 15px;">
+    <main ui-view></main>
+  </div>
+
 <!--Bower Dependecies -->
 <script src="vendor/angular/angular.min.js"></script>
 <script src="vendor/angular-animate/angular-animate.min.js"></script>

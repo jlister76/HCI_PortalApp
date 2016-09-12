@@ -24,7 +24,7 @@
       }
 
     })
-    .controller('LogInCtrl', function (AuthService, $scope){
+    .controller('LogInCtrl', function (AuthService, $scope, $location){
       $scope.user = {
         email: null,
         password: null
@@ -38,13 +38,13 @@
         rememberMe: false
       };
       $scope.login = function(){
-         AuthService.login($scope.user.email, $scope.user.password, function() {
-          var next = $location.nextAfterLogin || '/';
-          $location.nextAfterLogin = null;
-          $location.path(next);
-        })
+         AuthService.login($scope.user.email, $scope.user.password)
            .then(function(){
              console.log("Logged In.")
+             var next = $location.nextAfterLogin || '/';
+             $location.nextAfterLogin = null;
+             $location.path(next);
+
            })
       }
     })
