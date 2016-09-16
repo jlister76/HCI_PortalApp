@@ -22,12 +22,12 @@
         .state('portal', {
           abstract: true,
           url: '/portal',
-          template: '<p>Portal</p><div ui-view></div>',
+          template: '<div ui-view></div>',
           controller: 'HomeCtrl'
         })
-        .state('portal.home', {
+        .state('portal.app-launcher', {
           url: '',
-          templateUrl: 'modules/Core/Views/home.html',
+          templateUrl: 'modules/Core/Views/app-launcher.html',
           controller: 'HomeCtrl'
         });
       $urlRouterProvider.otherwise('/router');

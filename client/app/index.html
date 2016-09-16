@@ -5,13 +5,17 @@
     <title>HCI Portal</title>
 
   <link rel="stylesheet" href="vendor/angular-material/angular-material.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
 
-  <md-toolbar layout style="background-color: rgba(0, 39, 78, 1);" class="md-padding">
+  <md-toolbar layout layout-align="space-between center" style="background-color: rgba(0, 39, 78, 1);padding: 5px 20px" >
     <img src="img/HC_logo.png" alt="logo" width="105px" height="43px">
+    <md-button layout layout-align="center center" ui-sref="portal.app-launcher" class="md-mini md-fab md-primary md-raised">
+      <i class="material-icons" style="font-size: 24px">apps</i>
+    </md-button>
   </md-toolbar>
-  <div id="wrapper" style="padding: 0px 15px;">
+  <div id="wrapper">
     <main ui-view></main>
   </div>
 

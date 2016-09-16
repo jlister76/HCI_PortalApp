@@ -8,11 +8,11 @@
         .state('portal.riskAssessments', {
           abstract: true,
           url: '/risk-assessments',
-          template: '<p>Risk Assessments</p><div ui-view></div>'
+          templateUrl: 'modules/RiskAssessment/Views/base.html'
         })
         .state('portal.riskAssessments.main', {
           url: '',
-          template: '<p>Inside the Risk Assessments</p>'
+          templateUrl: 'modules/RiskAssessment/Views/dashboard.html'
         })
     })
 })();

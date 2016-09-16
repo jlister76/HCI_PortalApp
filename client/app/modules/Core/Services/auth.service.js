@@ -30,11 +30,6 @@
       function getCurrent() {
         return Member
           .getCurrent()
-          .$promise
-          .then(function(response){
-            console.log(response);
-          })
-
 
       }
       return {

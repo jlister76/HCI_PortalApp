@@ -49,11 +49,20 @@
       }
     })
     .controller ('LogOutCtrl', function (){})
-    .controller ('HomeCtrl', function($scope, AuthService, $state){
+    .controller ('HomeCtrl', function($scope, AuthService, $state, $rootScope){
       if (!AuthService.getCurrent()){
         $state.go('login');
       }else {
         console.log("This is good");
+        /*****************************************************************/
+        //Sets current user
+        AuthService.getCurrent()
+          .$promise
+          .then(function (user) {
+            $rootScope.currentUser = user;
+
+          });
+        /*****************************************************************/
       }
 
     })

@@ -1,0 +1,26 @@
+<div layout style="height:100vh;">
+
+
+      <section flex layout="column" style="background-color:#e2e2e2;" >
+        <md-toolbar style="background-color:#20272d;color:#0982c8;"><p flex-offset="10" class="md-display-1">Risk Assessments</p></md-toolbar>
+        <div flex layout>
+          <md-sidenav class=" md-padding" md-is-locked-open="true" md-component-id="left" style="width:100px;background-color:#20272d;color:white;">
+            <md-list>
+              <md-list-item layout layout-align="center center">
+                <md-button layout="column">
+                  <i class="material-icons" style="font-size: 24px;">add_box</i>
+                  <span>Create</span>
+                </md-button>
+              </md-list-item>
+            </md-list>
+          </md-sidenav>
+          <main ui-view flex layout></main>
+        </div>
+      </section>
+
+
+
+
+</div>
+
+
