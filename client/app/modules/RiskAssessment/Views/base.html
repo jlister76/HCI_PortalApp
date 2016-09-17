@@ -2,20 +2,25 @@
 
 
       <section flex layout="column" style="background-color:#e2e2e2;" >
-        <md-toolbar style="background-color:#20272d;color:#0982c8;"><p flex-offset="10" class="md-display-1">Risk Assessments</p></md-toolbar>
-        <div flex layout>
-          <md-sidenav class=" md-padding" md-is-locked-open="true" md-component-id="left" style="width:100px;background-color:#20272d;color:white;">
-            <md-list>
-              <md-list-item layout layout-align="center center">
-                <md-button layout="column">
-                  <i class="material-icons" style="font-size: 24px;">add_box</i>
-                  <span>Create</span>
-                </md-button>
-              </md-list-item>
-            </md-list>
-          </md-sidenav>
-          <main ui-view flex layout></main>
+
+        <div flex="100" layout="column">
+          <div layout style="height:100%;">
+            <md-sidenav class="" md-is-locked-open="true" md-component-id="left" style="height:100%;width:140px;background-color:#1557A8;color:white; padding-top:1rem;">
+              <div>
+                <div layout layout-align="center center">
+                  <a href="" style="color:white; text-decoration: none;">
+                    <div layout="row" layout-align="start center" style="width: 80%;">
+                      <i class="material-icons" style="font-size: 24px;">add_box</i>
+                      <p class="caption">Create</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </md-sidenav>
+            <main ui-view flex layout></main>
+          </div>
         </div>
+        <!--<footer layout layout-align="center center" style="background-color: #bcbcbc; color:#32393f;"><p class="md-caption">Heath Consultants Incoporated 2016</p></footer>-->
       </section>
 
 
