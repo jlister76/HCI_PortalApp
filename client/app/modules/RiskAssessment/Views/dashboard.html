@@ -1,17 +1,60 @@
-<div flex layout="column" style="background-color: #D5D6D7;">
-  <div layout layout-align="start center" class="" style="padding: 0 20px;"><p class="md-title">Risk Assessments</p></div>
-  <div flex="100" layout="row" style="height:100%">
-    <section class="md-padding" layout="column" flex="80">
-      <div flex="20" md-whiteframe="3" class="" style="width:60%; background-color: white; border-radius: 1%;color:#1557a8;padding:5px;">
-        <span class="md-title">Trending Injuries</span>
+<div layout="column" style="background-color: #D5D6D7; min-height:100vh;width:100%;">
+  <div layout layout-align="space-between center" class="" style="padding: 0 20px;"><p class="md-title">Risk Assessments</p>
+  <div layout layout-align="center center" style="background-color: #1E2C3B; color:white; height:44px; width:44px;"><p class="md-title">Q4</p></div>
+  </div>
+  <div layout="row" style="height:auto;">
+    <div layout="row" style="width:80%;">
+
+
+      <div flex layout>
+      <div layout="column" style="height: auto; width:100%;">
+        <div  layout>
+          <div layout="column" md-whiteframe="3"
+               style="width:60%; height:auto; background-color: white; border-radius: 1%;padding:5px;margin:.5rem;">
+            <span class="md-subhead" style="color:#477AAD;">Common Injuries</span>
+            <p class="md-body-1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          </div>
+          <div layout="column" md-whiteframe="3"
+               style="width:40%; height:auto; background-color: white; border-radius: 1%;padding:5px;margin:.5rem;">
+            <span class="md-subhead" style="color:#477AAD;">Recent Risk Assessments</span>
+            <p class="md-body-1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          </div>
+        </div>
+        <div layout id="stat-board"></div>
       </div>
 
-    </section>
-    <aside flex="20" layout="column" layout-align="start center" class="" style="color:white;padding: 1rem;">
+    </div>
 
-      <div layout class="" md-whiteframe="4" style="background-color: white;color:#00274e; min-width: 200px; height:200px; border-radius: 1%;padding:5px;">
-        <span class="md-subhead">Division 43</span>
+
+    </div>
+    <div flex="20" layout="column" layout-align="start center" class="" style="color:white;">
+      <div layout style="width:100%; border:solid thin white; margin-bottom:1.5rem;">
+        <a href="" class="md-body-2" ng-click="visible = !visible" style="height: 24px;width:100%;padding: .5rem;text-decoration: none;background-color:#3F5C7A ;color:white">
+          <span ng-if="!visible" layout layout-align="center center"><i class="material-icons">expand_more</i> Expand Groups</span>
+          <span ng-if="visible" layout layout-align="center center"><i class="material-icons">expand_less</i> Collapse Groups</span>
+        </a>
       </div>
-    </aside>
+      <div ng-repeat="group in groups" layout="column" id="area1" style="height:100%;width:90%;">
+        <div layout="column" class="" md-whiteframe="4" style="margin:.5rem; background-color: white;color:#00274e; width: 100%; min-height:100px; border-radius: 1%;padding:5px;">
+          <div layout layout-align="space-between">
+            <span class="md-subhead">{{ group.title }}</span>
+          </div>
+          <div flex layout layout-align="center center">
+            <p class="md-display-1">{{ group.percentage | number:0 }}%</p>
+          </div>
+          <div layout layout-align="center center"><span class="md-caption">Quarterly Requirement Met</span></div>
+        </div>
+        <div ng-show="visible" ng-repeat="project in group.projects"layout="column" id="{{ group.title }}" md-whiteframe="4" style="margin:.5rem; background-color: white;color:#00274e; width: 90%; border-radius: 1%;padding:5px;">
+          <a href="" ng-model="project.id" ng-click="loadStats(project.id)" style="text-decoration: none; color:#00274E;">
+            <div layout layout-align="space-around start" style="margin: 10px 0;">
+           <span class="md-body-1">{{ project.title }}</span><span class="md-body-1">{{ project.percentage | number:0 }}%</span>
+         </div>
+          <div flex-33 layout layout-align="center center" style="background-color: #4E79A3;">
+            <span class="md-caption" style="color: white;">Select to Load</span></div></a>
+        </div>
+      </div>
+
+
+    </div>
   </div>
 </div>

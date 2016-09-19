@@ -15,8 +15,10 @@
     .controller('RouteCtrl', function (AuthService, $location, $state, $scope, $rootScope) {
 
       if (!AuthService.getCurrent) {
+        $rootScope.currentUser = null;
         console.log('No curr user');
         /*$location.path('/login');*/
+
         $state.go('login');
       } else {
         console.log(AuthService.getCurrent());
@@ -40,11 +42,18 @@
       $scope.login = function(){
          AuthService.login($scope.user.email, $scope.user.password)
            .then(function(){
-             console.log("Logged In.")
+             console.log("Logged In.");
              var next = $location.nextAfterLogin || '/';
              $location.nextAfterLogin = null;
              $location.path(next);
 
+           })
+           .catch(function(e){
+             if (e) {
+               console.log(e);
+               $scope.err = e;
+
+             }
            })
       }
     })

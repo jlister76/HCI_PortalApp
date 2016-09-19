@@ -10,9 +10,10 @@
           url: '/risk-assessments',
           templateUrl: 'modules/RiskAssessment/Views/base.html'
         })
-        .state('portal.riskAssessments.main', {
+        .state('portal.riskAssessments.dashboard', {
           url: '',
-          templateUrl: 'modules/RiskAssessment/Views/dashboard.html'
+          templateUrl: 'modules/RiskAssessment/Views/dashboard.html',
+          controller: 'DashboardCtrl'
         })
     })
 })();

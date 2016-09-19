@@ -22,7 +22,7 @@
         .state('portal', {
           abstract: true,
           url: '/portal',
-          template: '<div ui-view></div>',
+          template: '<div flex layout="column" ui-view ></div>',
           controller: 'HomeCtrl'
         })
         .state('portal.app-launcher', {
