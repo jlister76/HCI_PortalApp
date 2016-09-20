@@ -24,7 +24,15 @@
 
     $scope.loadStats = function (id){
       //alert(id);
-      var el = angular.element(document.querySelectorAll('#stat-board'));
+      //var el = angular.element(document.querySelectorAll('#stat-board'));
+
+      $scope.test = [1,2,3];
+      angular.forEach($scope.test, function (value,index){
+        var el = angular.element(document.querySelectorAll('#stat-board'));
+        console.log();
+        /*var p = '<p>'+value+'</p>';*/
+        el.html(value);
+      });
 
       var stats = '<div flex layout style="width: 100%; background-color: white; border-radius: 1%; padding: .5rem; box-shadow: 1px 3px 5px #888888; margin:1rem;">' +
         '<div layout="column">' +
@@ -35,7 +43,7 @@
         '</div>';
 
 
-      el.html(stats);
+      //el.html(stats);
     }
 
     })

@@ -7,7 +7,7 @@
       $stateProvider
         .state('router', {
           url: '/router',
-          template: '<div class="lockscreen" style="background-color:#000; height: 100%"></div>',
+          template: '<div style="background-color:#000; height: 100%"></div>',
           controller: 'RouteCtrl'
         })
         .state('error', {

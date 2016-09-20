@@ -20,7 +20,24 @@
             <p class="md-body-1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
           </div>
         </div>
-        <div layout id="stat-board"></div>
+        <div layout id="stat-board">
+          <div flex layout="column" style="width: 100%; background-color: white; border-radius: 1%; padding: .5rem; box-shadow: 1px 3px 5px #888888; margin:1rem;">
+            <div layout><span class="md-subhead" style="border: solid thin green;">Project 5L</span></div>
+            <div>
+              <table>
+                <thead>
+                <th>Group</th>
+                <th>Percentage</th>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>Group 1</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -28,8 +45,8 @@
 
     </div>
     <div flex="20" layout="column" layout-align="start center" class="" style="color:white;">
-      <div layout style="width:100%; border:solid thin white; margin-bottom:1.5rem;">
-        <a href="" class="md-body-2" ng-click="visible = !visible" style="height: 24px;width:100%;padding: .5rem;text-decoration: none;background-color:#3F5C7A ;color:white">
+      <div layout style="height: 44px; width:100%; margin-bottom:1.5rem;">
+        <a href="" class="md-body-2" ng-click="visible = !visible" style="border:solid thin white; height: 24px;width:100%;padding: .5rem;text-decoration: none;background-color:#3F5C7A ;color:white">
           <span ng-if="!visible" layout layout-align="center center"><i class="material-icons">expand_more</i> Expand Groups</span>
           <span ng-if="visible" layout layout-align="center center"><i class="material-icons">expand_less</i> Collapse Groups</span>
         </a>
