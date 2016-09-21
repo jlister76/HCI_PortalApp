@@ -2,5 +2,5 @@
   'use strict';
 
   angular
-    .module('com.module.riskAssessment')
+    .module('com.module.riskAssessment',[])
 })();
