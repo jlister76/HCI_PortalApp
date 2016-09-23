@@ -7,7 +7,6 @@
       'lbServices',
       'ngMaterial',
       'ngMessages',
-      'chart.js',
       'com.module.core',
       'com.module.riskAssessment'])
 })();

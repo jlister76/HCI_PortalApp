@@ -1,7 +1,5 @@
 {
-  "directory": "client/app/vendor",
-  "resolvers": [
-    "bower-npm-resolver"
-  ]
+  "directory": "client/app/vendor"
+
 }
 
