@@ -24,6 +24,7 @@
               username: response.username,
               email: email
             };
+            sessionStorage.currentUser = email;
           })
 
       }

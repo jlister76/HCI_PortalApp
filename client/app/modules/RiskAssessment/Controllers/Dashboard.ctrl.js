@@ -20,7 +20,16 @@
             {id: '23',title: 'Project 23', percentage: 23}, {id: '24', title: 'Project 24', percentage: 68},{id: '25', title: 'Project 25', percentage: 52}
           ]}
       ];
+      $scope.recentAssessments = [
+        {location: "2411 Spruce", employee: "Martinez"},
+        {location: "123 Texas Blvd", employee: "Johnson"},
+        {location: "2411 Spruce", employee: "Martinez"},
+        {location: "123 Texas Blvd", employee: "Johnson"},
+        {location: "2411 Spruce", employee: "Martinez"}
 
+      ];
+
+      $scope.causes = ['Dog Bite','Slip,Trip & Fall',"Over-Extended",'Ueven Terrain'];
 
     $scope.loadStats = function (id){
       //alert(id);

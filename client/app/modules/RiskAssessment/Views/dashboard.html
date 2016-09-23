@@ -11,17 +11,23 @@
         <div  layout>
           <div layout="column" md-whiteframe="3"
                style="width:60%; height:auto; background-color: white; border-radius: 1%;padding:5px;margin:.5rem;">
-            <span class="md-subhead" style="color:#477AAD;">Common Injuries</span>
-            <div ng-repeat="label in labels">{{ label }}</div>
-            <!--<canvas id="doughnut" class="chart chart-doughnut"
-                    chart-data="data" chart-labels="labels" chart-legend=true>
-            </canvas>-->
+            <span class="md-subhead" style="color:#477AAD;margin-bottom: 1rem;">Reasons for Recent Injuries</span>
+            <div layout="column" style="height:auto;">
+              <div layout ng-repeat="cause in causes" style="padding:.5rem;">
+                <div><span class="md-body-1">{{cause}}</span></div>
+              </div>
+            </div>
           </div>
           <div layout="column" md-whiteframe="3"
                style="width:40%; height:auto; background-color: white; border-radius: 1%;padding:5px;margin:.5rem;">
-            <span class="md-subhead" style="color:#477AAD;">Recent Risk Assessments</span>
-            <p class="md-body-1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-          </div>
+            <span class="md-subhead" style="color:#477AAD; margin-bottom: 1rem;">Recent Risk Assessments</span>
+            <div layout="column" style="height:auto;">
+              <div layout layout-align="space-between" ng-repeat="assessment in recentAssessments" style="padding:.5rem;">
+                <div><a href="#" style="text-decoration: none;" class="md-body-1">{{assessment.location}}</a></div>
+                <div><span class="md-body-1">{{assessment.employee}}</span></div>
+              </div>
+            </div>
+             </div>
         </div>
         <div ng-if="changeClass == true" layout id="stat-board">
           <div flex layout="column" ng-class="{'makeVisible':changeClass}">
