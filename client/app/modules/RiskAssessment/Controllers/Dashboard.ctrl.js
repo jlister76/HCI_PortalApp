@@ -60,5 +60,10 @@
     })
     .controller('GroupCtrl', function($scope, $stateParams){
       $scope.groupId = $stateParams.groupId;
+
+      $scope.group = {
+        title: "Fort Worth Central",
+        employees: []
+      }
     })
 })();
