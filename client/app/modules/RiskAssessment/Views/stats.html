@@ -1,0 +1,44 @@
+<div flex layout>
+  <div layout="column" style="height: auto; width:100%;">
+    <div  layout>
+      <div layout="column" style="width:60%; height:auto; background-color: white; border-radius: 1%;padding:5px;margin:.2rem;border:solid thin lightgrey;">
+        <span class="md-subhead" style="color:#477AAD;margin-bottom: 1rem;">Causes of Recent Injuries</span>
+        <div layout style="height:auto;">
+          <div flex layout>
+           <div flex layout="column" layout-align="space-between">
+             <div layout ng-repeat="cause in causes" style="padding:.5rem;border: solid thin whitesmoke;background-color: lightblue;">
+               <div flex layout layout-align="space-between"><span class="md-body-1">{{cause.type}}</span></div>
+               <div>{{ cause.frequency }}</div>
+             </div>
+           </div>
+            <div>
+              <canvas id="pie" class="chart chart-pie"
+                      chart-data="data" chart-labels="labels" chart-options="options">
+              </canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div layout="column"
+           style="width:40%; height:auto; background-color: white; border-radius: 1%;padding:5px;margin:.2rem;border:solid thin lightgrey;">
+        <span class="md-subhead" style="color:#477AAD; margin-bottom: 1rem;">Days Injury Free</span>
+        <div layout="column" style="height:auto;">
+          <div layout layout-align="center center" style="padding:.5rem;">
+            <span class="md-display-4">45</span><span class="md-caption">days</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div layout>
+      <div flex="40" style="height:449px;background-color: white;margin:.2rem;padding:5px;border-radius: 1%;">
+        <span class="md-subhead" style="color:#477AAD; margin-bottom: 1rem;">Injury by Body Part</span>
+      </div>
+      <div flex="60" style="height:449px;background-color: white;margin:.2rem;padding:5px;border-radius: 1%;">
+        <span class="md-subhead" style="color:#477AAD; margin-bottom: 1rem;">Automobile Accidents</span>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>

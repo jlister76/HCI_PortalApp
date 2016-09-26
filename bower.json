@@ -22,6 +22,8 @@
     "angular-resource": "^1.5.8",
     "angular-material": "^1.1.1",
     "chartist": "^0.9.8",
-    "angular-chartist.js": "^4.2.1"
+    "angular-chartist.js": "^4.2.1",
+    "chart.js": "npm:chart.js#^2.2.2",
+    "angular-chart.js": "^1.0.3"
   }
 }

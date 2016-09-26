@@ -20,13 +20,17 @@
         /*$location.path('/login');*/
 
         $state.go('login');
-      } else {
+      }
+      if (AuthService.getCurrent){
+        $state.go('portal.app-launcher');
         console.log(AuthService.getCurrent());
-        $location.path('/portal');
+        $rootScope.currentUser;
+        /*$location.path('/portal');*/
+
       }
 
     })
-    .controller('LogInCtrl', function (AuthService, $scope, $location){
+    .controller('LogInCtrl', function (AuthService, $scope, $location, $state, $rootScope){
       $scope.user = {
         email: null,
         password: null
@@ -43,9 +47,11 @@
          AuthService.login($scope.user.email, $scope.user.password)
            .then(function(){
              console.log("Logged In.");
-             var next = $location.nextAfterLogin || '/';
-             $location.nextAfterLogin = null;
-             $location.path(next);
+             //var next = $location.nextAfterLogin || '/';
+             //$location.nextAfterLogin = null;
+             $state.go('portal.app-launcher');
+             $rootScope.currentUser;
+
 
            })
            .catch(function(e){

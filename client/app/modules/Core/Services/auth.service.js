@@ -18,13 +18,13 @@
           .$promise
           .then(function(response){
             console.log(response);
-            $rootScope.currentUser = {
+            /*$rootScope.currentUser = {
               id: response.user.id,
               tokenId: response.id,
               username: response.username,
               email: email
-            };
-            sessionStorage.currentUser = email;
+            };*/
+            //sessionStorage.currentUser = email;
           })
 
       }

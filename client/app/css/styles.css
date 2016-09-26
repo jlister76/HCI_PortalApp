@@ -4,20 +4,26 @@
 
 .makeVisible {
   background-color:white;
-  box-shadow: 1px 3px 5px #888888;
   width: 100%;
-  border-radius: 1%;
+  margin: .2rem;
   padding: .5rem;
-  margin:1rem;"
 }
 table {
   width:100%;
-  background-color: whitesmoke;
+
   padding:1rem;
 }
 td,th {
   padding: 1rem;
   text-align:center;
+}
+tr {
+  border:solid thin red;
+  background-color: #e2e2e2;
+}
+
+tr:hover {
+  background-color: #f0f0f0;
 }
 
 

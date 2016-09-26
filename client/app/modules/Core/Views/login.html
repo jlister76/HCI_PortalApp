@@ -1,10 +1,10 @@
 <div flex layout  style="height:100vh;">
-  <div flex="70" layout layout-align="" style="  height:100%; background-color: #4E79A3; background-image: url('../../../img/TAPS.jpg'); background-size: cover; background-position: center;background-repeat:no-repeat; ">
+  <div flex="70" layout layout-align="" style="height:100%; background-color: #4E79A3; background-image: url('../../../img/TAPS.jpg'); background-size: cover; background-position: center;background-repeat:no-repeat; ">
 
   </div>
-  <div flex="30" layout="column" layout-align="center">
-    <div layout layout-align="center center" style="margin-top:2rem; ">
-      <img src="../../../img/HCI_logo.png" alt="logo">
+  <div flex="30" layout="column" layout-align="center center" style="height:100%;">
+    <div layout layout-align="center center" style="width:100%;height:80px;margin-top:2rem;background-image: url('../../../img/HCI_logo.png'); background-size: contain; background-position: center;background-repeat:no-repeat; ">
+
     </div>
     <div layout layout-align="center center" style="height:100vh;">
       <div layout="column" layout-align="center center">
@@ -14,15 +14,17 @@
             <div layout="column">
               <md-input-container>
                 <label for="email">Email</label>
-                <input type="email" id="email" ng-model="user.email" style="width:300px;">
+                <input type="email" id="email" ng-model="user.email" style="width:100%;">
               </md-input-container>
               <md-input-container>
                 <label for="password">Password</label>
-                <input type="password" id="password" ng-model="user.password" style="width:300px;">
+                <input type="password" id="password" ng-model="user.password" style="width:100%;">
               </md-input-container>
             </div>
-            <div layout layout-align="center center" >
-              <md-button class="md-raised" type="submit" id="sign-in-button" style="margin-top:3rem; width:240px; height: 50px; background-color: #005EB8;color:white; font-size:16px;" >Log In</md-button>
+            <div layout="column" layout-align="center center" >
+              <md-button class="md-raised" type="submit" id="sign-in-button" style="margin-top:3rem; width:100%; height: 42px; background-color: #005EB8;color:white; font-size:16px;" >Log In</md-button>
+              <span><i class="material-icons" style="color:lightgrey;">lock</i></span>
+              <span class="md-caption">Secure Sign-In</span>
             </div>
           </form>
         </div>
