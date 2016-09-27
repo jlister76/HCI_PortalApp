@@ -4,13 +4,15 @@
     <div style="height:100%;">
       <table>
         <thead>
-        <th style="text-align:left;">Group</th>
-        <th>Quarterly Requirement</th>
+        <th style="text-align:left;">Employee</th>
+        <th>Current Monthly Status</th>
+        <th>Completed Risk Assessments</th>
         </thead>
         <tbody >
-        <tr ng-repeat="group in groups">
-          <td style="text-align:left;"><a href="" ui-sref="portal.riskAssessments.dashboard.group({groupId: group.id})" style="text-decoration:none;">{{ employee.lname, employee.fname }}</a></td>
-          <td> BLANK</td>
+        <tr ng-repeat="employee in group.employees">
+          <td style="text-align:left;"><a href="" style="text-decoration:none;">{{ employee.lname }}, {{employee.fname}}</a></td>
+          <td> {{employee.status}}</td>
+          <td> <a layout layout-align="center center" href="#" style="background-color: #7bb406; height: 48px; width:20%;text-decoration: none;color:white;"><i class="material-icons">assessment</i>Mo1</a> </td>
         </tr>
         </tbody>
       </table>

@@ -4,34 +4,27 @@
   </div>
   <div layout="row" style="height:auto;">
     <div ui-view layout="row" style="width:80%;"></div>
-    <div flex="20" layout="column" layout-align="start center" class="" style="color:white;">
-      <div layout style="width:100%; margin:.2rem 0;">
-        <a href="" class="md-body-2" ng-click="visible = !visible" style="border:solid thin white; height: 24px;width:100%;padding: .5rem;text-decoration: none;background-color:#3F5C7A ;color:white">
-          <span ng-if="!visible" layout layout-align="center center"><i class="material-icons">expand_more</i> Expand Groups</span>
-          <span ng-if="visible" layout layout-align="center center"><i class="material-icons">expand_less</i> Collapse Groups</span>
-        </a>
+    <div flex="20" layout="column" layout-align="start center">
+      <div layout style="width:95%; margin:.2rem 0; margin-left:.5rem; border-bottom:solid thin grey;">
+        <span class="md-title">Groups</span>
       </div>
-      <div ng-repeat="group in groups" layout="column" id="area1" layout-align="start" style="height:auto;width:auto;">
+      <div ng-repeat="group in groups" layout="column" id="area1" layout-align="start" style="height:200px;width:90%;">
 
 
-        <div layout="column" class="" md-whiteframe="3" style="min-height:100px;margin:.5rem; background-color: white;color:#6b787f; width: auto; border-radius: 1%;padding:.5rem; border:solid thin lightgrey;">
-          <div layout layout-align="space-between">
-            <span class="md-subhead">{{ group.title }}</span>
+        <div flex layout layout-align="space-between" class="" style="height:100px;width:100%;margin:.5rem 0;padding: .2rem; background-color: white;color:#6b787f; border-radius: 1%; border:none;">
+          <div style="">
+            <p class="md-subhead">{{ group.title }}</p>
           </div>
-          <div flex layout layout-align="center center">
-              <p class="md-headline" style="color:#1E2C3B;">{{ group.percentage | number:0 }}%</p>
+          <div>
+          <p class="md-subhead" style="color:#1E2C3B;">{{ group.percentage | number:0 }}%</p>
           </div>
-          <div layout layout-align="center center"><span class="md-caption">Quarterly Requirement Met</span></div>
+
         </div>
-        <div md-whiteframe="1" ng-show="visible" ng-repeat="project in group.projects"layout="column" id="{{ group.title }}" style="margin:.5rem; background-color: white;color:#00274e; width: 90%; border-radius: 1%;padding:5px;border:solid thin lightgray;">
+        <div ng-repeat="project in group.projects"layout="column" id="{{ group.title }}" style="border-bottom: solid thin lightgrey;" >
           <a href="" ng-click="subGroup(project.id)" ng-model="project.id" style="text-decoration: none; color:#00274E;">
             <div layout layout-align="space-around start" style="margin: 10px 0;">
-           <span class="md-body-1">{{ project.title }}</span><span class="md-body-1">{{ project.percentage | number:0 }}%</span>
-         </div>
-          <div flex-33 layout layout-align="center center" style="background-color: #4E79A3;">
-            <span class="md-caption" style="color: white;">Select to Load</span></div></a>
-        </div>
-
+              <i class="material-icons">add_circle_outline</i><span class="md-body-1">{{ project.title }}</span><span class="md-body-1">{{ project.percentage | number:0 }}%</span>
+            </div></a>
       </div>
 
 

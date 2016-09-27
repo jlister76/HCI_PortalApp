@@ -63,7 +63,9 @@
 
       $scope.group = {
         title: "Fort Worth Central",
-        employees: []
+        employees: [
+          {fname: "Joe", lname: "Smith", status: "required"}
+        ]
       }
     })
 })();
