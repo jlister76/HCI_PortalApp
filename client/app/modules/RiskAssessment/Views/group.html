@@ -13,7 +13,7 @@
           <td style="text-align:left;"><span>{{ employee.lname }}, {{employee.fname}}</span></td>
           <td> {{employee.status}}</td>
           <td layout><div ng-repeat="assessment in employee.assessments" flex layout >
-            <a layout layout-align="center center" href="#" style="background-color: green; height: 28px; padding:.5rem;text-decoration: none;color:white;border:solid thin lightgrey;border-radius:50px;"><i class="material-icons">assessment</i>Mo {{ assessment.month }}</a>
+            <a layout layout-align="center center" href="#" style="background-color: green; height: 22px; padding:.5rem;text-decoration: none;color:white;border:solid thin lightgrey;border-radius:50px;"><i class="material-icons" style="font-size:14px;">assessment</i>Mo {{ assessment.month }}</a>
           </div></td>
         </tr>
         </tbody>

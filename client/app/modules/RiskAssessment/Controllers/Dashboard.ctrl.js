@@ -23,7 +23,8 @@
       };
 
 
-
+      $scope.veh_labels = ['JAN', 'FEB','MAR','APR','MAY','JUNE','JULY','AUG','SEPT','OCT','DEC'];
+      $scope.veh_data = [2,0,0,3,0,0,0,0,1,1,0,0];
 
       $scope.recentAssessments = [
         {location: "2411 Spruce", employee: "Martinez"},
