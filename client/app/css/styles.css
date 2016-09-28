@@ -11,19 +11,22 @@
 table {
   width:100%;
 
-  padding:1rem;
+  padding:.5rem;
 }
 td,th {
   padding: 1rem;
   text-align:center;
 }
-tr {
+th {
 
   background-color: #e2e2e2;
 }
 
-tr:hover {
+th:hover {
   background-color: #f0f0f0;
+}
+tr:hover {
+  background-color: #e2e2e2;
 }
 
 

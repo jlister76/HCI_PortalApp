@@ -23,7 +23,7 @@
         <div ng-repeat="project in group.projects"layout="column" id="{{ group.title }}" style="border-bottom: solid thin lightgrey;" >
           <a href="" ng-click="subGroup(project.id)" ng-model="project.id" style="text-decoration: none; color:#00274E;">
             <div layout layout-align="space-around start" style="margin: 10px 0;">
-              <i class="material-icons">add_circle_outline</i><span class="md-body-1">{{ project.title }}</span><span class="md-body-1">{{ project.percentage | number:0 }}%</span>
+              <i class="material-icons" style="font-size:14px;">add</i><span class="md-body-1">{{ project.title }}</span><span class="md-body-1">{{ project.percentage | number:0 }}%</span>
             </div></a>
       </div>
 

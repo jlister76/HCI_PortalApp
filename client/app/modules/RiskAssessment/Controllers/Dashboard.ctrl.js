@@ -64,7 +64,8 @@
       $scope.group = {
         title: "Fort Worth Central",
         employees: [
-          {fname: "Joe", lname: "Smith", status: "required"}
+          {fname: "Joe", lname: "Smith", status: "required", assessments: [{month:1}]},
+          {fname: "Jane", lname: "Doe", status: "completed", assessments: [{month:1},{month:2}]}
         ]
       }
     })
