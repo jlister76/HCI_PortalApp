@@ -9,16 +9,24 @@
   padding: .2rem;
 }
 table {
+  display: table;
   width:100%;
 
   padding:.5rem;
+}
+td {
+
+  height:100%;
+  background-color: #f9f9f9;
+}
+td:hover{
+  background-color: #e2e2e2;
 }
 td,th {
   padding: 1rem;
   text-align:center;
 }
 th {
-
   background-color: #e2e2e2;
 }
 

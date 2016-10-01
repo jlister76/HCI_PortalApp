@@ -1,36 +1,22 @@
 <div flex layout style="background-color:lavender; padding:.5rem;">
   <div layout="column" style="height: auto; width:100%;">
     <div  layout>
-      <div layout="column" style="width:60%; height:auto; background-color: white; border-radius: 1%;padding:5px;margin:.2rem;border:solid thin lightgrey;">
+      <div flex="50" layout="column" style="height:auto; background-color: white; border-radius: 1%;padding:5px;margin:.2rem;border:solid thin lightgrey;">
         <span class="md-subhead" style="color:#1557a8;margin-bottom: 1rem;">Causes of Recent Injuries</span>
         <div layout style="height:auto;">
           <div flex layout>
            <div flex layout="column" layout-align="space-between">
-             <div layout ng-repeat="cause in causes" class="md-body-1" style="padding:.5rem;border: solid thin whitesmoke;background-color: #add8e6;">
-               <div flex layout layout-align="space-between"><span>{{cause.type}}</span></div>
-               <div>{{ cause.frequency }}</div>
+             <div>
+               <canvas id="pie" class="chart chart-pie"
+                       chart-data="data" chart-labels="labels" chart-options="injury_options">
+               </canvas>
              </div>
            </div>
-            <div>
-              <canvas id="pie" class="chart chart-pie"
-                      chart-data="data" chart-labels="labels" chart-options="options">
-              </canvas>
-            </div>
+
           </div>
         </div>
       </div>
-      <div layout="column"
-           style="width:40%; height:auto; background-color: white; border-radius: 1%;padding:5px;margin:.2rem;border:solid thin lightgrey;">
-        <span class="md-subhead" style="color:#1557a8; margin-bottom: 1rem;">Days Injury Free</span>
-        <div layout="column" style="height:auto;">
-          <div layout layout-align="center center" style="padding:.5rem;">
-            <span class="md-display-4">45</span><span class="md-caption">days</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div layout>
-      <div flex="30" style="height:449px;background-color: white;margin:.2rem;padding:5px;border-radius: 1%;border:solid thin lightgrey;">
+      <div flex="25" layout="column" style="background-color: white;margin:.2rem;padding:5px;border-radius: 1%;border:solid thin lightgrey;">
         <span class="md-subhead" style="color:#1557a8; margin-bottom: 1rem;">Injury Chart</span>
 
         <div flex layout class="md-body-1" style="background-color: rgb(249, 240, 39); border:solid thin white;padding:1rem;">
@@ -50,11 +36,37 @@
           <div flex><span>3</span></div>
         </div>
       </div>
-      <div flex="70" style="height:449px;background-color: white;margin:.2rem;padding:5px;border-radius: 1%;border:solid thin lightgrey;">
+      <div flex="25" layout="column"
+           style="height:auto; background-color: white; border-radius: 1%;padding:5px;margin:.2rem;border:solid thin lightgrey;">
+        <span class="md-subhead" style="color:#1557a8; margin-bottom: 1rem;">Days Injury Free</span>
+        <div layout="column" layout-align="center center" style="height:100%;">
+          <div layout layout-align="center center" style="background-color:whitesmoke;border-radius:50%;padding:.5rem;color: #333;">
+            <span class="md-display-4">45</span><span class="md-caption">days</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div layout>
+      <div flex="30" style="background-color: white;margin:.2rem;padding:5px;border-radius: 1%;border:solid thin lightgrey;">
+        <span class="md-subhead" style="color:#1557a8; margin-bottom: 1rem;">Collision Type</span>
+
+        <div flex layout class="md-body-1" style="border:solid thin white;padding:1rem;">
+          <div flex><span>Reversing</span></div>
+          <div flex><span>1</span></div>
+        </div>
+        <div flex layout class="md-body-1" style="border:solid thin white;padding:1rem;">
+          <div flex><span>Front-End</span></div>
+          <div flex><span>1</span></div>
+        </div>
+        <div flex layout class="md-body-1" style="border:solid thin white;padding:1rem;">
+          <div flex><span>Single-Vehicle</span></div>
+          <div flex><span>2</span></div>
+        </div>
+
+      </div>
+      <div flex="70" style="background-color: white;margin:.2rem;padding:5px;border-radius: 1%;border:solid thin lightgrey;">
         <span class="md-subhead" style="color:#1557a8; margin-bottom: 1rem;">Automobile Accidents</span>
-        <!--<canvas id="bar" class="chart chart-bar"
-                chart-data="veh_data" chart-labels="veh_labels" chart-series="series">
-        </canvas>-->
+
         <canvas id="line" class="chart chart-line" chart-data="veh_data"
                 chart-labels="veh_labels" chart-series="series" chart-options="options"
                 chart-dataset-override="datasetOverride" chart-click="onClick">

@@ -30,5 +30,10 @@
           templateUrl: 'modules/RiskAssessment/Views/group.html',
           controller: 'GroupCtrl'
         })
+        .state('portal.riskAssessments.create', {
+          url: '/create',
+          templateUrl: 'modules/RiskAssessment/Views/dashboard.html',
+          controller: 'DashboardCtrl'
+        })
     })
 })();

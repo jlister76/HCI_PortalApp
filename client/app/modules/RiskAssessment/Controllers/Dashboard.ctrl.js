@@ -34,13 +34,18 @@
         {location: "2411 Spruce", employee: "Martinez"}
 
       ];
-      $scope.labels = ['Dog Bite','Slips, Trips & Falls', 'Over-Extended', 'Uneven Terrain'];
-      $scope.data = [2,1,4,1];
-      $scope.causes = [{type:'Dog Bite', frequency: 2},{type:'Slip,Trip & Fall', frequency:1},{type:"Over-Extended", frequency:4},{type:'Ueven Terrain', frequency:1}];
+      $scope.labels = ['Dog Bite','Slips, Trips & Falls', 'Over Extending', 'Uneven-Terrain'];
+      $scope.data = [
+        2,1,4,1
+      ];
 
+      $scope.injury_options = {
+        legend: {display:true}
+      };
 
     $scope.projectId = $stateParams.projectId;
       $scope.level = $stateParams.level;
+      $scope.currQtr = 4;
 
     })
     .controller('StatsCtrl', function(){})
@@ -65,8 +70,8 @@
       $scope.group = {
         title: "Fort Worth Central",
         employees: [
-          {fname: "Joe", lname: "Smith", status: "required", assessments: [{month:1}]},
-          {fname: "Jane", lname: "Doe", status: "completed", assessments: [{month:1},{month:2}]}
+          {fname: "Joe", lname: "Smith", status: "required", assessments: [{month:1},{month:2}]},
+          {fname: "Jane", lname: "Doe", status: "completed", assessments: [{month:1},{month:2},{month:3}],met:true}
         ]
       }
     })
