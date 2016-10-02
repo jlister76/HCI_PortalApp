@@ -1,14 +1,14 @@
-<div flex layout style="background-color:lavender; padding:.5rem;">
+<div flex layout style="height: 100%;background-color:lavender; padding:.5rem;">
   <div layout="column" style="height: auto; width:100%;">
-    <div  layout>
+    <div  layout style="height:auto;" >
       <div flex="50" layout="column" style="height:auto; background-color: white; border-radius: 1%;padding:5px;margin:.2rem;border:solid thin lightgrey;">
         <span class="md-subhead" style="color:#1557a8;margin-bottom: 1rem;">Causes of Recent Injuries</span>
-        <div layout style="height:auto;">
-          <div flex layout>
-           <div flex layout="column" layout-align="space-between">
-             <div>
+        <div layout style="height:100%;">
+          <div flex layout style="height:100%;">
+           <div flex layout="column" layout-align="space-between" style="height:100%";>
+             <div layout  layout-align="center" style="width:100%;">
                <canvas id="pie" class="chart chart-pie"
-                       chart-data="data" chart-labels="labels" chart-options="injury_options">
+                       chart-data="data" chart-labels="labels" chart-options="injury_options" height="300" width="auto">
                </canvas>
              </div>
            </div>
@@ -69,7 +69,7 @@
 
         <canvas id="line" class="chart chart-line" chart-data="veh_data"
                 chart-labels="veh_labels" chart-series="series" chart-options="options"
-                chart-dataset-override="datasetOverride" chart-click="onClick">
+                chart-dataset-override="datasetOverride" chart-click="onClick" height="100">
         </canvas>
 
 

@@ -34,13 +34,17 @@
         {location: "2411 Spruce", employee: "Martinez"}
 
       ];
+
+
       $scope.labels = ['Dog Bite','Slips, Trips & Falls', 'Over Extending', 'Uneven-Terrain'];
       $scope.data = [
         2,1,4,1
       ];
 
       $scope.injury_options = {
-        legend: {display:true}
+        legend: {display:true},
+        responsive: false,
+        maintainAspectRatio: true
       };
 
     $scope.projectId = $stateParams.projectId;
