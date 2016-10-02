@@ -30,9 +30,9 @@
           templateUrl: 'modules/RiskAssessment/Views/group.html',
           controller: 'GroupCtrl'
         })
-        .state('portal.riskAssessments.create', {
-          url: '/create',
-          templateUrl: 'modules/RiskAssessment/Views/dashboard.html',
+        .state('portal.riskAssessments.new', {
+          url: '/new-assessment',
+          templateUrl: 'modules/RiskAssessment/Views/new-assessment.html',
           controller: 'DashboardCtrl'
         })
     })
