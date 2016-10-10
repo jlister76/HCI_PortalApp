@@ -63,7 +63,17 @@
            })
       }
     })
-    .controller ('LogOutCtrl', function (){})
+    .controller ('LogOutCtrl', function (AuthService, $scope, $state){
+      $scope.logout = function () {
+        console.log('Signing out...');
+        AuthService.logout()
+          .then(function(){
+            $state.go('login');
+            sessionStorage.clear();
+          });
+      };
+
+    })
     .controller ('HomeCtrl', function($scope, AuthService, $state, $rootScope){
       if (!AuthService.getCurrent()){
         $state.go('login');

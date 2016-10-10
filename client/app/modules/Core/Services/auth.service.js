@@ -33,8 +33,18 @@
           .getCurrent()
 
       }
+      function logout(){
+       return Member
+          .logout()
+          .$promise
+          .then(function () {
+            $rootScope.currentUser = null;
+
+          });
+      }
       return {
         login: login,
+        logout: logout,
         getCurrent: getCurrent
       }
     })

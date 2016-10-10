@@ -19,6 +19,10 @@
           templateUrl: 'Modules/Core/Views/login.html',
           controller: 'LogInCtrl'
         })
+        .state('logout', {
+          url: '/logout',
+          controller: 'LogOutCtrl'
+        })
         .state('portal', {
           abstract: true,
           url: '/portal',

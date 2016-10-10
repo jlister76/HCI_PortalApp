@@ -10,13 +10,24 @@
 </head>
 <body ng-cloak style="min-height:100vh;">
 
-  <div layout layout-align="start center" style="width:100%;height:44px; background-color: #00274E;" >
+  <div layout layout-align="space-between center" style="width:100%;height:44px; background-color: #00274E;" >
     <div ng-if="currentUser" layout layout-align="center center" ui-sref="portal.app-launcher" class="" style="background-color: rgb(0, 42, 113); height:100%; width:60px;">
-      <a ui-sref="portal.app-launcher" style="color:#e2e2e2;">
+      <a ui-sref="portal.app-launcher" style="color:white">
         <i class="material-icons" style="font-size: 24px">apps</i>
       </a>
     </div>
+    <div ng-if="currentUser" class="md-padding" style="border-left:solid 2px white;">
+      <md-menu>
+        <!-- Trigger element is a md-button with an icon -->
+        <md-button class="md-icon-button" aria-label="Open sample menu" ng-click="$mdOpenMenu($event)">
+          <i class="material-icons" style="color:white;">settings</i>
+        </md-button>
+        <md-menu-content ng-controller="LogOutCtrl">
+          <md-menu-item><md-button ng-click="logout()">Sign Out</md-button></md-menu-item>
+        </md-menu-content>
+      </md-menu>
 
+    </div>
   </div>
   <div flex id="wrapper" style="height:auto;">
 
@@ -42,6 +53,7 @@
 <script src="modules/Core/app.core.js"></script>
 <script src="modules/Core/Config/core.config.js"></script>
 <script src="modules/Core/Config/core.route.js"></script>
+  <script src="modules/Core/Controllers/Main.ctrl.js"></script>
 <script src="modules/Core/Controllers/route.ctrl.js"></script>
 <script src="modules/Core/Services/auth.service.js"></script>
 <script src="modules/SafetyDashboard/app.safetyDashBoard.js"></script>

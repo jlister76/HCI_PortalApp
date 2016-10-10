@@ -1,37 +1,45 @@
-<div layout="column" layout-align="start" style="background-color: rgb(9, 113, 178); color: white; height: 180px; padding: 1rem;">
-  <div flex-offset="45" layout layout-align="start center">
-    <img src="../../../img/HCI_logo.png" alt="logo">
+<div layout="column" layout-align="start center" style="background-color: rgb(9, 113, 178); color: white; height: 180px; padding: 1rem;">
+  <div layout="column" style="width: 65%;">
+    <div flex-offset="45" layout layout-align="start center">
+      <img src="../../../img/HCI_logo.png" alt="logo">
+    </div>
+    <div  layout>
+      <span class="md-display-1">Hello, {{ currentUser.email }}</span>
+    </div>
   </div>
-  <div layout>
-    <span class="md-display-1">Hello, {{ currentUser.email }}</span>
+
+
+</div>
+<div layout="column" layout-align="start center" class="md-padding" style="background-color: #e8e8e8; ">
+  <div layout="column" style="width:65%;">
+    <div style="color:#333333;"><span class="md-title">Business Applications</span></div>
+    <div layout >
+      <a href="" ui-sref="portal.safety.dashboard.stats" style="text-decoration: none; color: white;margin: 1rem;" >
+        <div layout="column" layout-align="center center" class="md-raised" style=" width:110px; height:100px; background-color: #7bb406;">
+          <span style="font-size: 28px;"><em><strong>Safety</strong></em></span>
+          <span class="md-caption">SafetyDashboard</span>
+        </div>
+      </a>
+      <a href="" ui-sref="portal.safety.dashboard" style="text-decoration: none; color: white;margin: 1rem;border:solid thin lightgray;" >
+        <div layout="column" layout-align="center center" class="md-raised" style=" width:110px; height:100px; background-color: #1557a8;">
+          <span style="font-size: 28px;"><em><strong>A&I</strong></em></span>
+          <span class="md-caption">Accidents&Injuries</span>
+        </div>
+      </a>
+      <a href="" ui-sref="portal.riskAssessment.home" style="text-decoration: none; color: white;margin: 1rem;" >
+        <div layout="column" layout-align="center center" class="md-raised" style=" width:110px; height:100px; background-color: #424e55;">
+          <span style="font-size: 28px;"><em><strong>RA</strong></em></span>
+          <span class="md-caption">RiskAssessments</span>
+        </div>
+      </a>
+    </div>
   </div>
 
 </div>
-<div layout="column" class="md-padding" style=" min-height:340px;" md-whiteframe="4">
-  <div style="color:#333333;"><h3>App Launcher</h3></div>
-  <div layout>
-    <a href="" ui-sref="portal.safety.dashboard.stats" style="text-decoration: none; color: white;margin: 1rem;" >
-      <div layout="column" layout-align="center center" class="md-raised" style=" width:110px; height:110px; background-color: #7bb406;">
-        <span style="font-size: 34px;"><em><strong>Safety</strong></em></span>
-        <span class="md-caption">SafetyDashboard</span>
-      </div>
-    </a>
-    <a href="" ui-sref="portal.safety.dashboard" style="text-decoration: none; color: white;margin: 1rem;border:solid thin lightgray;" >
-      <div layout="column" layout-align="center center" class="md-raised" style=" width:110px; height:110px; background-color: #1557a8;">
-        <span style="font-size: 34px;"><em><strong>A&I</strong></em></span>
-        <span class="md-caption">Accidents&Injuries</span>
-      </div>
-    </a>
-    <a href="" ui-sref="portal.riskAssessment.home" style="text-decoration: none; color: white;margin: 1rem;" >
-      <div layout="column" layout-align="center center" class="md-raised" style=" width:110px; height:110px; background-color: #424e55;">
-        <span style="font-size: 34px;"><em><strong>RA</strong></em></span>
-        <span class="md-caption">RiskAssessments</span>
-      </div>
-    </a>
+<div layout layout-align="center start" class="md-padding">
+  <div layout style="width:65%;">
+    <p class="md-headline">Company Newsletter</p>
   </div>
-</div>
-<div layout>
-  <p class="md-highlight">Company Newsletter</p>
 </div>
 
 
