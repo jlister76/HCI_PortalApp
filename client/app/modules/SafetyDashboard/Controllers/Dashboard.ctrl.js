@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('com.module.riskAssessment')
+    .module('com.module.safetyDashboard')
     .controller('DashboardCtrl', function($scope, $state, $stateParams){
 
       $scope.groups = [
@@ -17,15 +17,11 @@
             {id: '23',title: 'Project 23', percentage: 23}, {id: '24', title: 'Project 24', percentage: 68},{id: '25', title: 'Project 25', percentage: 52}
           ]}
       ];
-
       $scope.subGroup = function(id){
-        $state.transitionTo('portal.riskAssessments.dashboard.project',{projectId:id});
+        $state.transitionTo('portal.safety.dashboard.project',{projectId:id});
       };
-
-
       $scope.veh_labels = ['JAN', 'FEB','MAR','APR','MAY','JUNE','JULY','AUG','SEPT','OCT','DEC'];
       $scope.veh_data = [2,0,0,3,0,0,0,0,1,1,0,0];
-
       $scope.recentAssessments = [
         {location: "2411 Spruce", employee: "Martinez"},
         {location: "123 Texas Blvd", employee: "Johnson"},
@@ -34,23 +30,18 @@
         {location: "2411 Spruce", employee: "Martinez"}
 
       ];
-
-
       $scope.labels = ['Dog Bite','Slips, Trips & Falls', 'Over Extending', 'Uneven-Terrain'];
       $scope.data = [
         2,1,4,1
       ];
-
       $scope.injury_options = {
         legend: {display:true},
         responsive: false,
         maintainAspectRatio: true
       };
-
-    $scope.projectId = $stateParams.projectId;
+      $scope.projectId = $stateParams.projectId;
       $scope.level = $stateParams.level;
       $scope.currQtr = 4;
-
     })
     .controller('StatsCtrl', function(){})
     .controller('ProjectCtrl', function($scope, $stateParams){

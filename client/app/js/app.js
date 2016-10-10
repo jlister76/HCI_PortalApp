@@ -9,5 +9,6 @@
       'ngMessages',
       'chart.js',
       'com.module.core',
+      'com.module.safetyDashboard',
       'com.module.riskAssessment'])
 })();

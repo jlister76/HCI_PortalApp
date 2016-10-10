@@ -1,13 +1,15 @@
 <div layout="column" style="background-color: white; min-height:100vh;width:100%;">
-  <div layout layout-align="space-between center" class="" style="padding: 0 20px;"><p class="md-title">Risk Assessments</p>
+  <div layout layout-align="space-between center" class="" style="padding: 0 20px;"><a href="" ui-sref="portal.safety.dashboard.stats" layout layout-align="center center" class="md-title"style="color:rgb(0, 90, 255);text-decoration: none;"><i class="material-icons" style="font-size: 24px;">dashboard</i>Safety Dashboard {{ state }}</a>
   <div layout layout-align="center center" style="background-color: #3F5C7A; color:white; height:44px; width:44px;"><p class="md-title">Q{{currQtr}}</p></div>
   </div>
   <div layout="row" style="height:auto;">
     <div ui-view layout="row" style="height:100%;width:80%;"></div>
-    <div flex="20" layout="column" layout-align="start center">
-      <div layout style="width:95%; margin:.2rem 0; margin-left:.5rem; border-bottom:solid thin grey;">
-        <span class="md-title">Groups</span>
+    <div flex="20" layout="column" layout-align="start" style="margin-left:.5rem;">
+      <div layout style="width:95%; margin:.2rem 0; margin-left:.0rem; border-bottom:solid thin grey;">
+        <span class="md-title">Risk Assessments</span>
       </div>
+      <div layout style="color:#453d3f;">
+        <span class="md-subhead">Groups</span></div>
       <div ng-repeat="group in groups" layout="column" id="area1" layout-align="start" style="height:200px;width:90%;">
 
 
@@ -16,14 +18,14 @@
             <p class="md-subhead">{{ group.title }}</p>
           </div>
           <div>
-          <p class="md-subhead" style="color:#1E2C3B;">{{ group.percentage | number:0 }}%</p>
+          <p class="md-subhead" style="color:#1E2C3B;">{{ group.percentage | number:1 }}%</p>
           </div>
 
         </div>
         <div ng-repeat="project in group.projects"layout="column" id="{{ group.title }}" style="border-bottom: solid thin lightgrey;" >
           <a href="" ng-click="subGroup(project.id)" ng-model="project.id" style="text-decoration: none; color:#00274E;">
             <div layout layout-align="space-around start" style="margin: 10px 0;">
-              <i class="material-icons" style="font-size:14px;">add</i><span class="md-body-1">{{ project.title }}</span><span class="md-body-1">{{ project.percentage | number:0 }}%</span>
+              <span class="md-body-1" style="color:rgb(0, 90, 255);">{{ project.title }}</span><span class="md-body-1">{{ project.percentage | number:1 }}%</span>
             </div></a>
       </div>
 

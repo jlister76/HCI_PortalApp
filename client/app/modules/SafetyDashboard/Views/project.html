@@ -10,7 +10,7 @@
         </thead>
         <tbody >
         <tr ng-repeat="group in groups">
-          <td style="text-align:left;"><a href="" ui-sref="portal.riskAssessments.dashboard.group({groupId: group.id})" style="text-decoration:none;">{{ group.title }}</a></td>
+          <td style="text-align:left;"><a href="" ui-sref="portal.safety.dashboard.group({groupId: group.id})" style="text-decoration:none;">{{ group.title }}</a></td>
           <td>{{ group.percentage | number:0 }}%</td>
         </tr>
         </tbody>

@@ -1,39 +1,13 @@
-<div layout style="height:100%;">
+<div flex style="border:dashed 2px green;">
 
+  <div layout layout-align="center center" style="border:dashed 2px yellow;">
+    <div layout="column" style="border:solid thin lightgrey;">
+      <span class="md-subhead" style="color:#007bff;">Employees who need risk assessments</span>
+      <ul style="list-style:none;">
+        <li ng-repeat="e in employees" style="border:solid thin grey">{{ e.name }}</li>
 
-      <section flex layout="column" style="background-color:#eaeaea; min-height:100%;" >
+      </ul>
+    </div>
 
-        <div layout="column" style="height:auto">
-          <div layout style="height:auto">
-            <md-sidenav md-is-locked-open="true" md-component-id="left" style="height:auto;width:240px;background-color:#1557A8;color:white; padding-top:1rem;">
-              <div>
-                <div layout layout-align="start center" style="padding:.5rem;">
-                  <a href="" ui-sref="portal.riskAssessments.dashboard.stats" style="color:white; text-decoration: none;">
-                    <div layout="row" layout-align="start center">
-                      <i class="material-icons" style="font-size: 24px;">dashboard</i>
-                      <p class="md-body-1">Dashboard</p>
-                    </div>
-                  </a>
-                </div>
-                <div layout layout-align="start center" style="padding:.5rem;">
-                  <a href="" ui-sref="portal.riskAssessments.new" style="color:white; text-decoration: none;">
-                    <div layout="row" layout-align="start center">
-                      <i class="material-icons" style="font-size: 24px;">add_box</i>
-                      <p class="md-body-1">New Assessment</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </md-sidenav>
-            <main ui-view flex style="height:auto;"></main>
-          </div>
-        </div>
-        <!--<footer layout layout-align="center center" style="background-color: #bcbcbc; color:#32393f;"><p class="md-caption">Heath Consultants Incoporated 2016</p></footer>-->
-      </section>
-
-
-
-
+  </div>
 </div>
-
-
