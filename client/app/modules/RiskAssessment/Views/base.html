@@ -1,13 +1,23 @@
-<div flex style="border:dashed 2px green;">
+<div flex style="border:dashed 2px green; height:100%;">
 
-  <div layout layout-align="center center" style="border:dashed 2px yellow;">
-    <div layout="column" style="border:solid thin lightgrey;">
+  <div layout layout-align="center center" style="height:100%;border:dashed 2px yellow;">
+    <ul style="list-style: none;">
+      <li>
+        <div><md-button  class="md-headline" style="border:solid thin cornflowerblue;text-decoration:none;color:cornflowerblue;">Start New Assessment</md-button></div>
+      </li>
+      <li>
+        <div>
+          <md-button class="md-headline" style="border:solid thin cornflowerblue;text-decoration:none;color:cornflowerblue;">Continue Existing Assessment</md-button>
+        </div>
+        </li>
+    </ul>
+    <!--<div layout="column" style="border:solid thin lightgrey;">
       <span class="md-subhead" style="color:#007bff;">Employees who need risk assessments</span>
       <ul style="list-style:none;">
         <li ng-repeat="e in employees" style="border:solid thin grey">{{ e.name }}</li>
 
       </ul>
-    </div>
+    </div>-->
 
   </div>
 </div>
