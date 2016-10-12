@@ -1,0 +1,26 @@
+<div layout="column" class="md-padding md-body-1">
+  <a href="" ui-sref="portal.riskAssessment.home" layout layout-align="start center" style="text-decoration: none;">
+    <div layout layout-align="center center" style="margin: .5rem;width: 45px; height:45px;border-radius: 100px; border: solid thin grey;">
+      <i class="material-icons">arrow_back</i>
+    </div> <div>BACK</div> </a>
+
+
+<span style="margin:1rem;color:cornflowerblue;">Complete Risk Assessment On:</span>
+<div layout="column" layout-align="center center" style="border:solid thin lightgrey;padding:.5rem;">
+  <md-input-container>
+    <label for="employee_number">Enter Employee #</label><input type="text" id="employee_number">
+  </md-input-container>
+  <div layout layout-align="center">
+    <a href="" style="color:cornflowerblue; text-decoration: none;border: solid thin cornflowerblue;padding:.5rem;">Find Employee</a>
+  </div>
+</div>
+  <p layout layout-align="center center">- OR - </p>
+<span>Select Employee</span>
+  <div style="width:auto; border:solid thin lightgrey;">
+    <md-list ng-repeat="employee in employees" layout layout-align="space-between center" class="employee-list md-padding">
+      <md-list-item flex ><a href="" style="color:darkslategrey; text-decoration: none;">{{employee.name}}</a></md-list-item>
+    </md-list>
+  </div>
+</div>
+
+

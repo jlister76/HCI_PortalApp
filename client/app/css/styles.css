@@ -42,5 +42,13 @@ tr:hover {
 
 }
 
+.employee-list:nth-child(odd) {
+
+}
+
+.employee-list:hover {
+  background-color: #d9e3f8;
+}
+
 
 
