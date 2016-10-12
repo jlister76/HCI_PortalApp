@@ -36,9 +36,6 @@ th:hover {
 tr:hover {
   background-color: #e2e2e2;
 }
-.business-app:hover {
-  border: solid thin white;
-}
 
 .business:hover {
   border:1px solid white;
