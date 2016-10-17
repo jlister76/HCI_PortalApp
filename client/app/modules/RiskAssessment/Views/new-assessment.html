@@ -1,19 +1,18 @@
 <div layout="column" class="md-padding md-body-1">
   <div layout layout-align="space-between">
-    <a href="" ui-sref="portal.riskAssessment.menu" layout layout-align="start center" style="text-decoration: none;color: #0935ff;;">
+    <md-button href="" ui-sref="portal.riskAssessment.menu" layout layout-align="start center" class="md-primary">
       <div layout layout-align="center center" style="margin: .5rem;width: 45px; height:45px;border-radius: 100px; border: solid thin grey;">
         <i class="material-icons">arrow_back</i>
-      </div> <div>BACK</div> </a>
-    <div>BEGIN</div>
-    <a href="" ui-sref="portal.riskAssessment.step1" layout layout-align="start center" style="text-decoration: none;color: #0935ff;">
-
+      </div> <div>Menu</div> </md-button>
+    <md-button ui-sref="portal.riskAssessment.step1" layout layout-align="start center" class="md-primary" style="text-decoration: none;" ng-disabled="false">
+      <div >Step 1</div>
       <div layout layout-align="center center" style="margin: .5rem;width: 45px; height:45px;border-radius: 100px; border: solid thin grey;">
         <i class="material-icons">arrow_forward</i>
-      </div></a>
+      </div></md-button>
   </div>
 
-
-<span style="margin:1rem;color:darkslategrey;">Complete Risk Assessment On:</span>
+<span class="md-subhead">Select Employee</span>
+<span style="margin:1rem;color:darkslategrey;">You have selected:</span>
   <span layout layout-align="center center" style="color:darkslategrey; margin:.5rem;"> {{selectedEmployee}}</span>
 <div layout="column" layout-align="center center" style="border:solid thin lightgrey;padding:.5rem;">
   <md-input-container>

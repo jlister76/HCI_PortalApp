@@ -1,16 +1,14 @@
 <div layout="column" class="md-padding md-body-1">
   <div layout layout-align="space-between">
-    <a href="" ui-sref="portal.riskAssessment.menu" layout layout-align="start center" style="text-decoration: none;color: #0935ff;;">
+    <md-button href="" ui-sref="portal.riskAssessment.new" layout layout-align="start center" class="md-primary">
       <div layout layout-align="center center" style="margin: .5rem;width: 45px; height:45px;border-radius: 100px; border: solid thin grey;">
         <i class="material-icons">arrow_back</i>
-      </div> <div>Start Over</div> </a>
-    <div layout layout-align="center center">
-      <div>STEP 2</div>
-      <md-button class="md-primary" ui-sref="portal.riskAssessment.step2" layout layout-align="start center" style="text-decoration: none;" ng-disabled="false">
-        <div layout layout-align="center center" style="margin: .5rem;width: 45px; height:45px;border-radius: 100px; border: solid thin grey;">
-          <i class="material-icons">arrow_forward</i>
-        </div></md-button>
-    </div>
+      </div> <div>Employee</div> </md-button>
+    <md-button ui-sref="portal.riskAssessment.step2" layout layout-align="start center" class="md-primary" style="text-decoration: none;" ng-disabled="false">
+      <div >Step 2</div>
+      <div layout layout-align="center center" style="margin: .5rem;width: 45px; height:45px;border-radius: 100px; border: solid thin grey;">
+        <i class="material-icons">arrow_forward</i>
+      </div></md-button>
   </div>
 
 <div layout="column" layout-align="center" style="width:300px;color:darkslategray"> <!--Change screen size-->
@@ -19,7 +17,7 @@
   </div>
   <div style="padding:.5rem;">
     <span class="md-body-1" style="color:blue;">
-      While observing the technician for 30 minutes select each hazard encountered.
+      <strong>Evaluation:</strong> While observing the technician for 30 minutes select each hazard encountered.
     </span>
   </div>
   <div layout>
@@ -31,9 +29,7 @@
     <md-input-container>
       <label for="hazards">Select Hazard</label>
       <md-select ng-model="option" id="hazards">
-        <md-option value="One">One</md-option>
-        <md-option value="Two">Two</md-option>
-        <md-option value="Three">Three</md-option>
+        <md-option ng-repeat="hazard in hazards" ng-value="{{hazard}}">{{hazard}}</md-option>
       </md-select>
     </md-input-container>
     <label for="comments">Comment</label>
@@ -47,4 +43,3 @@
   </div>
   </div>
 </div>
-

@@ -25,7 +25,45 @@
         {name: 'David Johnson', status: "required"},
         {name: 'Milton Austin', status: "required"}
       ];
-
+      $scope.hazards = [
+        "Snow/Ice",
+        "Loose Gravel/Dirt",
+        "Wet Grass/Mud",
+        "Overgrown Vegetation",
+        "Poison Ivy/Oak/Sumac",
+        "Surface Transition",
+        "Change in Elevation",
+        "Holes",
+        "Debris [boards, nails, etx.]," +
+        "Tripping Hazards",
+        "Fences",
+        "Poor Visibility",
+        "Vehicular Traffic",
+        "Hand Tools",
+        "Lifting",
+        "Basement/Attic Debris",
+        "Stairs/Ladders",
+        "Low Ceilings",
+        "Dogs",
+        "Bees",
+        "Tick/Fleas",
+        "Ants",
+        "Snakes",
+        "Spiders",
+        "Livestock",
+        "Look ahead 15 seconds",
+        "4-Second following distance",
+        "Scan a mirror 5 to 8 seconds",
+        "Move eyes every 2 seconds",
+        "Surround vehicle with space",
+        "Seek eye contact",
+        "Avoid backing if possible," +
+        "Backing slowly",
+        "Backing upon arrival",
+        "G.O.A.L. - Get out and look",
+        "Distracted driving",
+        "Drivers Lincese Check"
+      ];
 
     })
 })();
