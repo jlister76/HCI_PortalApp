@@ -18,8 +18,9 @@
   </div>
 
   <div layout="column" layout-align="center" style="width:300px;color:darkslategray"> <!--Change screen size-->
-    <div layout>
-      <div style="background-color: darkblue; color:white;padding: .5rem 1rem;margin:1rem;">Step 2</div>
+    <div layout layout-align="space-between center">
+      <div  class="md-headline" style="background-color: darkblue; color:white;padding: .5rem 1rem;margin:1rem;">Step 2</div>
+      <div id="display" class="md-title"><strong>00:00</strong></div>
     </div>
     <div style="padding:.5rem;">
     <span class="md-body-1" style="color:blue;">
@@ -29,7 +30,7 @@
     </div>
     <div layout>
       <div style="padding:.5rem;"><span>Employee:</span></div>
-      <div style="padding:.5rem;"> John Lister{{employeeName}}</div>
+      <div style="padding:.5rem;">{{employeeName}}</div>
     </div>
   </div>
 </div>

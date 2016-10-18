@@ -34,6 +34,11 @@
           templateUrl: 'modules/RiskAssessment/Views/step3.html',
           controller: 'RiskAssessmentCtrl'
         })
+        .state('portal.riskAssessment.complete', {
+          url: '/complete',
+          templateUrl: 'modules/RiskAssessment/Views/complete.html',
+          controller: 'RiskAssessmentCtrl'
+        })
     })
 
 

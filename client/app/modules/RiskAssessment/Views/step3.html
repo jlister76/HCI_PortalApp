@@ -4,16 +4,17 @@
       <div layout layout-align="center center" style="margin: .5rem;width: 45px; height:45px;border-radius: 100px; border: solid thin grey;">
         <i class="material-icons">arrow_back</i>
       </div> <div>Step 2</div> </md-button>
-    <md-button ui-sref="portal.riskAssessment.step1" layout layout-align="start center" class="md-primary" style="text-decoration: none;" ng-disabled="false">
-      <div >Complete</div>
+    <md-button ui-sref="portal.riskAssessment.complete" layout layout-align="start center" class="md-primary" style="text-decoration: none;" ng-disabled="false">
+      <div >Finalize</div>
       <div layout layout-align="center center" style="margin: .5rem;width: 45px; height:45px;border-radius: 100px; border: solid thin grey;">
         <i class="material-icons">arrow_forward</i>
       </div></md-button>
   </div>
 
 <div layout="column" layout-align="center" style="width:300px;color:darkslategray"> <!--Change screen size-->
-  <div layout>
-    <div  style="background-color: darkblue; color:white;padding: .5rem 1rem;margin:1rem;">Step 3</div>
+  <div layout layout-align="space-between center">
+    <div class="md-headline" style="background-color: darkblue; color:white;padding: .5rem 1rem;margin:1rem;">Step 3</div>
+    <div id="display" class="md-title"><strong>00:00</strong></div>
   </div>
   <div style="padding:.5rem;">
     <span class="md-body-1" style="color:blue;">
@@ -22,16 +23,29 @@
   </div>
   <div layout>
     <div style="padding:.5rem;"><span>Employee:</span></div>
-    <div style="padding:.5rem;"> John Lister{{employeeName}}</div>
+    <div style="padding:.5rem;">{{employeeName}}</div>
   </div>
 
   <div layout="column" style="border:solid thin lightgrey;background: whitesmoke;padding:.5rem;margin:1rem;">
     <md-input-container>
       <label for="hazards">Select Hazard</label>
       <md-select ng-model="option" id="hazards">
-        <md-option ng-repeat="hazard in hazards" ng-value="{{hazard}}">{{hazard}}</md-option>
+        <md-option ng-repeat="hazard in hazards" ng-value="hazard">{{hazard}}</md-option>
       </md-select>
     </md-input-container>
+    <div layout="column" >
+      <span>Employee's reaction was:</span>
+      <div layout style="margin:1rem;">
+        <md-radio-group ng-model="reaction" class="md-primary">
+          <md-radio-button  value="safe" aria-label="Safe">
+            Safe
+          </md-radio-button>
+          <md-radio-button value="unsafe" aria-label="Unsafe">
+            At-Risk
+          </md-radio-button>
+        </md-radio-group>
+      </div>
+    </div>
     <label for="comments">Comment</label>
     <textarea id="comments" rows="5"></textarea>
     <md-button ng-disabled style="border:solid thin cornflowerblue;">Save Hazard</md-button>
