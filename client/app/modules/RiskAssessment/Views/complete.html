@@ -1,15 +1,78 @@
-<div layout="column" class="md-padding md-body-1">
+<div layout="column" class="md-padding md-body-1" style="max-width:375px;">
   <div layout layout-align="space-between">
-    <md-button href="" ui-sref="portal.riskAssessment.step3" layout layout-align="start center" class="md-primary">
+    <md-button ng-click="reset();" ui-sref="portal.riskAssessment.step3" layout layout-align="start center" class="md-primary">
       <div layout layout-align="center center" style="margin: .5rem;width: 45px; height:45px;border-radius: 100px; border: solid thin grey;">
         <i class="material-icons">arrow_back</i>
       </div> <div>Step 3</div> </md-button>
-    <md-button ui-sref="portal.riskAssessment.menu" layout layout-align="start center" class="md-primary" style="text-decoration: none;" ng-disabled="false">
+    <md-button  ui-sref="portal.riskAssessment.menu" layout layout-align="start center" class="md-primary" style="text-decoration: none;" ng-disabled="false">
       <div >Complete</div>
       <div layout layout-align="center center" style="margin: .5rem;width: 45px; height:45px;border-radius: 100px; border: none;">
         <i class="material-icons">save</i>
       </div></md-button>
   </div>
-
+  <div layout="column" style="margin:1rem;">
+    <div style="margin:1rem;">
+      <span class="md-title">Recap</span>
+    </div>
+    <div>
+      <span>Employee: {{employee}}</span>
+    </div>
+    <div>
+      <span>Duration: {{employee}}</span>
+    </div>
+    <div>
+      <span>Location: {{employee}}</span>
+    </div>
+  </div>
+  <div layout="column" >
+    <div layout layout-align="space-between">
+      <span class="md-subhead">Step 1 - Evaluation</span>
+      <a href="" ng-hide="show" ng-click="show=!show" class="md-caption">Show All</a>
+      <a href="" ng-hide="!show" ng-click="show=!show" class="md-caption">Hide</a>
+    </div>
+    <div layout="column" style="border: solid thin grey; padding:1rem;max-width:300px;" ng-hide="!show">
+      <div layout="column" layout-align="start">
+        <div layout>
+          <div style="margin-right: .5rem;"><strong>Hazard:</strong></div>
+          <div>Stairs</div>
+        </div>
+        <div layout>
+          <div style="margin-right: .5rem;"><strong>Reaction:</strong></div>
+          <div layout>Safe</div>
+        </div>
+      </div>
+      <div layout="column">
+        <div style="margin-right: .5rem;"><strong>Comments:</strong></div>
+        <div layout style="max-width:300px;padding:.3rem;">
+          <span>These are the comments entered for this hazard.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div layout="column">
+    <div layout layout-align="space-between">
+      <span class="md-subhead">Step 3 - Recognize & React</span>
+      <a href="" ng-hide="step3" ng-click="step3=!step3" class="md-caption">Show All</a>
+      <a href="" ng-hide="!step3" ng-click="step3=!step3" class="md-caption">Hide</a>
+    </div>
+    <div layout="column" style="border: solid thin grey; padding:1rem;max-width:300px;" ng-hide="!step3">
+      <div layout="column" layout-align="start">
+        <div layout>
+          <div style="margin-right: .5rem;"><strong>Hazard:</strong></div>
+          <div>Stairs</div>
+        </div>
+        <div layout>
+          <div style="margin-right: .5rem;"><strong>Reaction:</strong></div>
+          <div layout>Safe</div>
+        </div>
+      </div>
+      <div layout="column">
+        <div style="margin-right: .5rem;"><strong>Comments:</strong></div>
+        <div layout style="max-width:300px;padding:.3rem;">
+          <span>These are the comments entered for this hazard.</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 

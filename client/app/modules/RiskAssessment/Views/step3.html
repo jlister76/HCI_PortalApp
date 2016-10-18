@@ -1,11 +1,11 @@
 <div layout="column" class="md-padding md-body-1">
   <div layout layout-align="space-between">
-    <md-button href="" ui-sref="portal.riskAssessment.step2" layout layout-align="start center" class="md-primary">
+    <md-button ng-click="reset();" ui-sref="portal.riskAssessment.step2" layout layout-align="start center" class="md-primary">
       <div layout layout-align="center center" style="margin: .5rem;width: 45px; height:45px;border-radius: 100px; border: solid thin grey;">
         <i class="material-icons">arrow_back</i>
       </div> <div>Step 2</div> </md-button>
-    <md-button ui-sref="portal.riskAssessment.complete" layout layout-align="start center" class="md-primary" style="text-decoration: none;" ng-disabled="false">
-      <div >Finalize</div>
+    <md-button ng-click="reset();" ui-sref="portal.riskAssessment.complete" layout layout-align="start center" class="md-primary" style="text-decoration: none;" ng-disabled="false">
+      <div>Finalize</div>
       <div layout layout-align="center center" style="margin: .5rem;width: 45px; height:45px;border-radius: 100px; border: solid thin grey;">
         <i class="material-icons">arrow_forward</i>
       </div></md-button>
@@ -14,7 +14,7 @@
 <div layout="column" layout-align="center" style="width:300px;color:darkslategray"> <!--Change screen size-->
   <div layout layout-align="space-between center">
     <div class="md-headline" style="background-color: darkblue; color:white;padding: .5rem 1rem;margin:1rem;">Step 3</div>
-    <div id="display" class="md-title"><strong>00:00</strong></div>
+    <div id="display3" class="md-title"><strong>00:00</strong></div>
   </div>
   <div style="padding:.5rem;">
     <span class="md-body-1" style="color:blue;">

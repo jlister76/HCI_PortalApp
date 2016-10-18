@@ -78,7 +78,7 @@
       if (!AuthService.getCurrent()){
         $state.go('login');
       }else {
-        console.log("This is good");
+
         /*****************************************************************/
         //Sets current user
         AuthService.getCurrent()

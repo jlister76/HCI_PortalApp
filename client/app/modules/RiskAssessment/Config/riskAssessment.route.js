@@ -22,17 +22,17 @@
         .state('portal.riskAssessment.step1', {
           url: '/step1',
           templateUrl: 'modules/RiskAssessment/Views/step1.html',
-          controller: 'RiskAssessmentCtrl'
+          controller: 'Step1Ctrl'
         })
         .state('portal.riskAssessment.step2', {
           url: '/step2',
           templateUrl: 'modules/RiskAssessment/Views/step2.html',
-          controller: 'RiskAssessmentCtrl'
+          controller: 'Step2Ctrl'
         })
         .state('portal.riskAssessment.step3', {
           url: '/step3',
           templateUrl: 'modules/RiskAssessment/Views/step3.html',
-          controller: 'RiskAssessmentCtrl'
+          controller: 'Step3Ctrl'
         })
         .state('portal.riskAssessment.complete', {
           url: '/complete',
