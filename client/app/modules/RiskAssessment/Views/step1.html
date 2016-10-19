@@ -50,9 +50,32 @@
     <textarea id="comments" rows="5"></textarea>
     <md-button ng-disabled style="border:solid thin cornflowerblue;">Save Hazard</md-button>
   </div>
-  <div>
+  <div layout="column">
     <div>
-      <span>Hazards Identified</span>
+      <span class="md-subhead">Hazards Identified</span>
+    </div>
+    <div layout="column" style="border: solid thin grey; padding:.5rem;max-width:300px;margin:1rem;">
+      <div layout="column" layout-align="start">
+        <div layout layout-align="end">
+          <a href="">
+            <i class="material-icons" style="color:#e62926;">remove_circle</i>
+          </a>
+        </div>
+        <div layout>
+          <div style="margin-right: .5rem;"><strong>Hazard:</strong></div>
+          <div>Stairs/Ladders</div>
+        </div>
+        <div layout>
+          <div style="margin-right: .5rem;"><strong>Reaction:</strong></div>
+          <div layout>Safe</div>
+        </div>
+      </div>
+      <div layout="column">
+        <div style="margin-right: .5rem;"><strong>Comments:</strong></div>
+        <div layout style="max-width:300px;padding:.3rem;">
+          <span>Employee utilized hand rail while climbing the stairs.</span>
+        </div>
+      </div>
     </div>
   </div>
   </div>

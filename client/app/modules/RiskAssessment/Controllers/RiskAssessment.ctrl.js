@@ -3,32 +3,10 @@
 
   angular
     .module('com.module.riskAssessment')
-    .controller('RiskAssessmentCtrl', function($scope, $state, $interval){
-      var timeBegan = moment();
-      var started = window.setInterval(Clock, 10);
-      $scope.stop = function (){
-        window.clearInterval(started); };
-      function Clock () {
-        var currentTime = moment(),
-          elapsedTime = currentTime.diff(timeBegan),
-          el = angular.element(document.querySelector("#display"));
-        el.html(moment(elapsedTime).format('mm:ss'))
+    .controller('RiskAssessmentCtrl', function($scope, $state){
 
-      }
-      $scope.reset = function (){
-        window.clearInterval(started);
-        timeBegan = moment();
-        var resetEl = angular.element(document.querySelector("#display"));
-        resetEl.html("00:00");
-      };
-
-     $scope.employees = [
-        {name:"John Doe"},
-        {name:"Jane Smith"},
-        {name: "Jack Black"}
-      ];
-
-      $scope.newAssessment = function () {
+    
+     $scope.newAssessment = function () {
         $state.go('portal.riskAssessment.new');
       };
 

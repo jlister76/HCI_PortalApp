@@ -5,7 +5,7 @@
         <i class="material-icons">arrow_back</i>
       </div> <div>Step 2</div> </md-button>
     <md-button ng-click="reset();" ui-sref="portal.riskAssessment.complete" layout layout-align="start center" class="md-primary" style="text-decoration: none;" ng-disabled="false">
-      <div>Finalize</div>
+      <div>Recap</div>
       <div layout layout-align="center center" style="margin: .5rem;width: 45px; height:45px;border-radius: 100px; border: solid thin grey;">
         <i class="material-icons">arrow_forward</i>
       </div></md-button>
@@ -50,9 +50,55 @@
     <textarea id="comments" rows="5"></textarea>
     <md-button ng-disabled style="border:solid thin cornflowerblue;">Save Hazard</md-button>
   </div>
-  <div>
+  <div layout="column">
     <div>
-      <span>Hazards Identified</span>
+      <span class="md-subhead">Hazards Identified</span>
+    </div>
+    <div layout="column" style="border: solid thin grey; padding:.5rem;max-width:300px;margin:1rem;">
+      <div layout="column" layout-align="start">
+        <div layout layout-align="end">
+          <a href="">
+            <i class="material-icons" style="color:#e62926;">remove_circle</i>
+          </a>
+        </div>
+        <div layout>
+          <div style="margin-right: .5rem;"><strong>Hazard:</strong></div>
+          <div>Tripping Hazards</div>
+        </div>
+        <div layout>
+          <div style="margin-right: .5rem;"><strong>Reaction:</strong></div>
+          <div layout>Safe</div>
+        </div>
+      </div>
+      <div layout="column">
+        <div style="margin-right: .5rem;"><strong>Comments:</strong></div>
+        <div layout style="max-width:300px;padding:.3rem;">
+          <span>Technician identified several tripping hazards and avoided them in a safe manner.</span>
+        </div>
+      </div>
+    </div>
+    <div layout="column" style="border: solid thin grey; padding:.5rem;max-width:300px;margin:1rem;">
+      <div layout="column" layout-align="start">
+        <div layout layout-align="end">
+          <a href="">
+            <i class="material-icons" style="color:#e62926;">remove_circle</i>
+          </a>
+        </div>
+        <div layout>
+          <div style="margin-right: .5rem;"><strong>Hazard:</strong></div>
+          <div>Tripping Hazards</div>
+        </div>
+        <div layout>
+          <div style="margin-right: .5rem;"><strong>Reaction:</strong></div>
+          <div layout>Safe</div>
+        </div>
+      </div>
+      <div layout="column">
+        <div style="margin-right: .5rem;"><strong>Comments:</strong></div>
+        <div layout style="max-width:300px;padding:.3rem;">
+          <span>Technician identified several tripping hazards and avoided them in a safe manner.</span>
+        </div>
+      </div>
     </div>
   </div>
   </div>
