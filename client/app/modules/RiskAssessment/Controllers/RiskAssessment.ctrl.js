@@ -3,7 +3,7 @@
 
   angular
     .module('com.module.riskAssessment')
-    .controller('RiskAssessmentCtrl', function($scope, $state){
+    .controller('RiskAssessmentCtrl', function($scope, $state, timerFactory){
 
 
      $scope.newAssessment = function () {
@@ -58,39 +58,55 @@
         "Distracted driving",
         "Drivers Lincese Check"
       ];
-      $scope.stop = function (){
-        window.clearInterval(started); };
 
-      function Clock () {
-        var currentTime = moment(),
-          elapsedTime = currentTime.diff(timeBegan),
-          el = angular.element(document.querySelector("#display"));
-        el.html(moment(elapsedTime).format('mm:ss'))
 
+
+      var obj = {
+        start: null,
+        end: null
+      };
+
+       $scope.begin = function (){
+        var a = moment();
+         sessionStorage.setItem('time',a);
+         console.log(a);
+       };
+       $scope.end = function(){
+         var a = sessionStorage.getItem('time');
+         var x = a.toISOString();
+         console.log(x);
+         /*console.log(a);
+         console.log(moment.isMoment(x));
+         var b = moment();
+         var c = b.diff(x);
+         console.log(c);*/
+       };
+       var durations = [];
+        $scope.a = function () {
+          var x = timerFactory.newTime();
+          obj.start = x;
+          return obj;
+        };
+
+      $scope.b = function () {
+        var y = timerFactory.newTime();
+        obj.end = y;
+        return obj;
+      };
+
+     $scope.duration = function (a,b) {
+       console.log(a,b);
+     }
+
+    })
+    .factory('timerFactory', function(){
+      function newTime (){
+        var a = moment();
+        return a;
       }
-      $scope.reset = function (){
-        window.clearInterval(started);
-        timeBegan = moment();
-        var resetEl = angular.element(document.querySelector("#display"));
-        resetEl.html("00:00");
-      };
 
-      $scope.reset();
-      var timeBegan = moment();
-      var started = window.setInterval(Clock, 10);
-
-      var startOfDuration = [];
-
-      console.log(startOfDuration);
-
-        $scope.duration = function(time){
-        console.log(time);
-        var endOfDuration = moment();
-        var d = endOfDuration.diff(time);
-        console.log(d);
-
-      };
-
-
+      return {
+        newTime: newTime
+      }
     })
 })();
