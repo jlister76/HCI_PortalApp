@@ -3,13 +3,12 @@
 
   angular
     .module('com.module.riskAssessment')
-    .controller('RiskAssessmentCtrl', function($scope, $state, timerFactory){
+    .controller('RiskAssessmentCtrl', function($scope, $state, timeService){
 
 
      $scope.newAssessment = function () {
         $state.go('portal.riskAssessment.new');
       };
-
       $scope.employees = [
         {name: 'Allen Athey', status: "required"},
         {name: 'James Rodrgiuez', status: "optional"},
@@ -59,54 +58,39 @@
         "Drivers Lincese Check"
       ];
 
-
-
-      var obj = {
-        start: null,
-        end: null
+      $scope.step1 = function (){
+          var a = moment();
+        timeService.setProperty(a);
+        console.log(a);
       };
-
-       $scope.begin = function (){
-        var a = moment();
-         sessionStorage.setItem('time',a);
-         console.log(a);
-       };
-       $scope.end = function(){
-         var a = sessionStorage.getItem('time');
-         var x = a.toISOString();
-         console.log(x);
-         /*console.log(a);
-         console.log(moment.isMoment(x));
-         var b = moment();
-         var c = b.diff(x);
-         console.log(c);*/
-       };
-       var durations = [];
-        $scope.a = function () {
-          var x = timerFactory.newTime();
-          obj.start = x;
-          return obj;
-        };
-
-      $scope.b = function () {
-        var y = timerFactory.newTime();
-        obj.end = y;
-        return obj;
-      };
-
-     $scope.duration = function (a,b) {
-       console.log(a,b);
-     }
 
     })
-    .factory('timerFactory', function(){
-      function newTime (){
-        var a = moment();
-        return a;
-      }
+    .controller('testCtrl', function($scope,timeService){
+
+      $scope.step3 = function(){
+        var a = timeService.getProperty();
+        console.log(a);
+        var b = moment();
+        console.log(b);
+        var diff = b.diff(a);
+        $scope.dur = moment.duration(diff).asMinutes();
+        console.log($scope.dur);
+      };
+      $scope.step3();
+    })
+    .service('timeService', function(){
+        var newTime = {
+          startTime: moment()
+        };
 
       return {
-        newTime: newTime
-      }
+        getProperty: function () {
+          return newTime;
+        },
+        setProperty: function(value) {
+          newTime.startTime = value;
+        }
+      };
+
     })
 })();
