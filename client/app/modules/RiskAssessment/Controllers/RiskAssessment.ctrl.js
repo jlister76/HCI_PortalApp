@@ -3,7 +3,7 @@
 
   angular
     .module('com.module.riskAssessment')
-    .controller('RiskAssessmentCtrl', function($scope, $state, timeService){
+    .controller('RiskAssessmentCtrl', function($scope, $state, timeService,$window){
 
 
      $scope.newAssessment = function () {
@@ -58,29 +58,58 @@
         "Drivers Lincese Check"
       ];
 
-      $scope.step1 = function (){
-          var a = moment();
-        timeService.setProperty(a);
-        console.log(a);
+      $scope.startTimer = function (){
+          if (moment.isMoment(timeService.getProperty())){
+            console.log("Start time already exist.")
+          }else{
+            var a = moment();
+            timeService.setProperty(a);
+            console.log("The start time has been set to "+a);
+            $window.sessionStorage.setItem('startTime', a);
+          }
+      };
+      $scope.endTimer = function (){
+        var a = moment();
+        timeService.setPropertyB(a);
+        console.log("The end time is "+a);
       };
 
     })
-    .controller('testCtrl', function($scope,timeService){
+    .controller('RecapCtrl', function($scope,timeService, $window){
 
-      $scope.step3 = function(){
-        var a = timeService.getProperty();
-        console.log(a);
-        var b = moment();
-        console.log(b);
+      function duration(){
+
+        var timer = timeService.getProperty();
+        var a = timer.startTime;
+        var startTime = $window.sessionStorage.getItem(('startTime'));
+        var b = timer.endTime;
+        console.log("The start time is "+a+" ,and the end time is "+b);
         var diff = b.diff(a);
-        $scope.dur = moment.duration(diff).asMinutes();
-        console.log($scope.dur);
+        console.log("The difference between "+a+" & "+b+" is "+diff+" milliseconds.");
+
+        var durationInMinutes = moment.duration(diff).asMinutes();
+
+        if (!$window.sessionStorage.getItem('duration')){
+          $window.sessionStorage.setItem('duration', durationInMinutes);
+          $scope.dur = $window.sessionStorage.getItem('duration');
+          console.log($scope.dur);
+        }else{
+          $scope.dur = $window.sessionStorage.getItem('duration') ;
+          console.log($scope.dur);
+        }
+
       };
-      $scope.step3();
+      duration();
+
+      $scope.clearDuration = function(){
+        $window.sessionStorage.removeItem('duration');
+      };
+
     })
     .service('timeService', function(){
         var newTime = {
-          startTime: moment()
+          startTime: moment(),
+          endTime: moment()
         };
 
       return {
@@ -89,6 +118,9 @@
         },
         setProperty: function(value) {
           newTime.startTime = value;
+        },
+        setPropertyB: function(value) {
+          newTime.endTime = value;
         }
       };
 

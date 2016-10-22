@@ -37,7 +37,7 @@
         .state('portal.riskAssessment.complete', {
           url: '/complete',
           templateUrl: 'modules/RiskAssessment/Views/complete.html',
-          controller: 'testCtrl'
+          controller: 'RecapCtrl'
         })
     })
 
