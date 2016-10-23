@@ -59,7 +59,7 @@
       ];
 
       $scope.startTimer = function (){
-          if (moment.isMoment(timeService.getProperty())){
+          if ($window.sessionStorage.key('startTime')){
             console.log("Start time already exist.")
           }else{
             var a = moment();
@@ -80,8 +80,10 @@
       function duration(){
 
         var timer = timeService.getProperty();
-        var a = timer.startTime;
+        //var a = timer.startTime;
         var startTime = $window.sessionStorage.getItem(('startTime'));
+        var newStartTime = new Date(startTime);
+        var a = moment(newStartTime);
         var b = timer.endTime;
         console.log("The start time is "+a+" ,and the end time is "+b);
         var diff = b.diff(a);
@@ -98,11 +100,16 @@
           console.log($scope.dur);
         }
 
+
       };
       duration();
 
       $scope.clearDuration = function(){
         $window.sessionStorage.removeItem('duration');
+
+      };
+      $scope.clearStartTime = function() {
+        $window.sessionStorage.removeItem('startTime');
       };
 
     })
