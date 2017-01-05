@@ -14,17 +14,17 @@
     .module('com.module.core')
     .controller('RouteCtrl', function (AuthService, $location, $state, $scope, $rootScope) {
 
-      if (!AuthService.getCurrent) {
+     /* if (!AuthService.getCurrent) {
         $rootScope.currentUser = null;
         console.log('No curr user');
-        /*$location.path('/login');*/
+        /!*$location.path('/login');*!/
 
-        $state.go('login');
-      }
+        //$state.go('login');
+      }*/
       if (AuthService.getCurrent){
-        $state.go('portal.app-launcher');
+        //$state.go('portal.app-launcher');
         console.log(AuthService.getCurrent());
-        $rootScope.currentUser;
+        //$rootScope.currentUser;
         /*$location.path('/portal');*/
 
       }

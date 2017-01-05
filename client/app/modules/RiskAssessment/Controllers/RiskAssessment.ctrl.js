@@ -59,7 +59,7 @@
       ];
 
       $scope.startTimer = function (){
-          if ($window.sessionStorage.key('startTime')){
+          if ($window.sessionStorage.getItem('startTime')){
             console.log("Start time already exist.")
           }else{
             var a = moment();
@@ -111,6 +111,20 @@
       $scope.clearStartTime = function() {
         $window.sessionStorage.removeItem('startTime');
       };
+
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(angular.element(document.querySelectorAll('#map')), {
+          zoom: 4,
+          center: uluru
+        });
+
+        initMap();
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
 
     })
     .service('timeService', function(){

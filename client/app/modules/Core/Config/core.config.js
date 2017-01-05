@@ -13,9 +13,10 @@
               //Now clearing the loopback values from client browser for safe logout...
               LoopBackAuth.clearUser();
               LoopBackAuth.clearStorage();
+              console.log("Error Clrd");
               $location.nextAfterLogin = $location.path();
               $location.path('/login');
-            }
+              console.log("after path");            }
             return $q.reject(rejection);
           }
         };
